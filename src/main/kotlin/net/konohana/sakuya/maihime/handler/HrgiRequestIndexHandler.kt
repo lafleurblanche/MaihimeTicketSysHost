@@ -24,7 +24,7 @@ class HrgiRequestIndexHandler {
 
     @Bean
     fun hrgiRequestIndexRoutes(): RouterFunction<ServerResponse> {
-        return RouterFunctions.route(RequestPredicates.GET("/hiiragi/**")) { get(it) }
+        return RouterFunctions.route(RequestPredicates.GET("/hiiragi/request/**")) { get(it) }
     }
 
     @Suppress("UnusedPrivateMember")
