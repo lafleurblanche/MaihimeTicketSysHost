@@ -14,21 +14,21 @@ import reactor.core.publisher.Mono
 
 /**
  * ## Indexハンドラクラス
- * * HRGI(柊交通鉄道部)
+ * * HNKI(ひのき交通)
  * * 乗車券要求画面
  */
 @Component
-class HrgiRequestIndexHandler {
-    @Value("classpath:/request/hrgi/index.html")
-    private lateinit var hrgiRequestIndexHtml: Resource
+class HnkiRequestIndexHandler {
+    @Value("classpath:/request/hnki/index.html")
+    private lateinit var hnkiRequestIndexHtml: Resource
 
     @Bean
-    fun hrgiRequestIndexRoutes(): RouterFunction<ServerResponse> {
-        return RouterFunctions.route(RequestPredicates.GET("/hiiragi/request/**")) { get(it) }
+    fun hnkiRequestIndexRoutes(): RouterFunction<ServerResponse> {
+        return RouterFunctions.route(RequestPredicates.GET("/hinoki/request/**")) { get(it) }
     }
 
     @Suppress("UnusedPrivateMember")
     fun get(request: ServerRequest): Mono<ServerResponse> {
-        return ServerResponse.ok().contentType(MediaType.TEXT_HTML).bodyValue(hrgiRequestIndexHtml)
+        return ServerResponse.ok().contentType(MediaType.TEXT_HTML).bodyValue(hnkiRequestIndexHtml)
     }
 }
