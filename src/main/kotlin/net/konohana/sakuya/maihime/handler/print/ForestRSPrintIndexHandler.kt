@@ -24,7 +24,7 @@ class ForestRSPrintIndexHandler {
 
     @Bean
     fun forestRSPrintIndexRoutes(): RouterFunction<ServerResponse> {
-        return RouterFunctions.route(RequestPredicates.GET("/forestrs/print/**")) { get(it) }
+        return RouterFunctions.route(RequestPredicates.GET("/flrs/print/**")) { get(it) }
     }
 
     @Suppress("UnusedPrivateMember")
