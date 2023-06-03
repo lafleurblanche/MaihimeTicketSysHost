@@ -14,6 +14,7 @@ class StaticPageConfig : WebFluxConfigurer {
             .addResourceLocations("classpath:/request/kirisame")
             .addResourceLocations("classpath:/request/forestrs/")
             .addResourceLocations("classpath:/request/forestkg/")
+            .addResourceLocations("classpath:/print/forestrs/")
             .addResourceLocations("classpath:/print/lilie/")
             .addResourceLocations("classpath:/print/hrgi/")
             .addResourceLocations("classpath:/print/hnki/")
