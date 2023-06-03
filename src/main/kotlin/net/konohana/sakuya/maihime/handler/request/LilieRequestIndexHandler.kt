@@ -1,4 +1,4 @@
-package net.konohana.sakuya.maihime.handler
+package net.konohana.sakuya.maihime.handler.request
 
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Bean
@@ -14,21 +14,21 @@ import reactor.core.publisher.Mono
 
 /**
  * ## Indexハンドラクラス
- * * KIRISAME(栗宮中小私鉄加入者連合)
+ * * Lilie(薬川支線管理区)
  * * 乗車券要求画面
  */
 @Component
-class KirisameRequestIndexHandler {
-    @Value("classpath:/request/kirisame/index.html")
-    private lateinit var kirisameRequestIndexHtml: Resource
+class LilieRequestIndexHandler {
+    @Value("classpath:/request/lilie/index.html")
+    private lateinit var lilieRequestIndexHtml: Resource
 
     @Bean
-    fun kirisameRequestIndexRoutes(): RouterFunction<ServerResponse> {
-        return RouterFunctions.route(RequestPredicates.GET("/kirisame/request/**")) { get(it) }
+    fun lilieRequestIndexRoutes(): RouterFunction<ServerResponse> {
+        return RouterFunctions.route(RequestPredicates.GET("/lilie/request/**")) { get(it) }
     }
 
     @Suppress("UnusedPrivateMember")
     fun get(request: ServerRequest): Mono<ServerResponse> {
-        return ServerResponse.ok().contentType(MediaType.TEXT_HTML).bodyValue(kirisameRequestIndexHtml)
+        return ServerResponse.ok().contentType(MediaType.TEXT_HTML).bodyValue(lilieRequestIndexHtml)
     }
 }

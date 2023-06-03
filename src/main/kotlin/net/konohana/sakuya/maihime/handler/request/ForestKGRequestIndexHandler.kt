@@ -1,4 +1,4 @@
-package net.konohana.sakuya.maihime.handler
+package net.konohana.sakuya.maihime.handler.request
 
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Bean

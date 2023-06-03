@@ -1,4 +1,4 @@
-package net.konohana.sakuya.maihime.handler
+package net.konohana.sakuya.maihime.handler.request
 
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Bean
@@ -14,21 +14,21 @@ import reactor.core.publisher.Mono
 
 /**
  * ## Indexハンドラクラス
- * * Lilie(薬川支線管理区)
+ * * HRGI(柊交通鉄道部)
  * * 乗車券要求画面
  */
 @Component
-class LilieRequestIndexHandler {
-    @Value("classpath:/request/lilie/index.html")
-    private lateinit var lilieRequestIndexHtml: Resource
+class HrgiRequestIndexHandler {
+    @Value("classpath:/request/hrgi/index.html")
+    private lateinit var hrgiRequestIndexHtml: Resource
 
     @Bean
-    fun lilieRequestIndexRoutes(): RouterFunction<ServerResponse> {
-        return RouterFunctions.route(RequestPredicates.GET("/lilie/request/**")) { get(it) }
+    fun hrgiRequestIndexRoutes(): RouterFunction<ServerResponse> {
+        return RouterFunctions.route(RequestPredicates.GET("/hiiragi/request/**")) { get(it) }
     }
 
     @Suppress("UnusedPrivateMember")
     fun get(request: ServerRequest): Mono<ServerResponse> {
-        return ServerResponse.ok().contentType(MediaType.TEXT_HTML).bodyValue(lilieRequestIndexHtml)
+        return ServerResponse.ok().contentType(MediaType.TEXT_HTML).bodyValue(hrgiRequestIndexHtml)
     }
 }
