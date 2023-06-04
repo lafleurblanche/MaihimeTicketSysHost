@@ -24,7 +24,7 @@ class HrgiPrintIndexHandler {
 
     @Bean
     fun hrgiPrintIndexRoutes(): RouterFunction<ServerResponse> {
-        return RouterFunctions.route(RequestPredicates.GET("/hiiragi/print/**")) { get(it) }
+        return RouterFunctions.route(RequestPredicates.GET("/hrgi/print/**")) { get(it) }
     }
 
     @Suppress("UnusedPrivateMember")
