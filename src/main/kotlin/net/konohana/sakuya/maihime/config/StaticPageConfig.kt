@@ -8,6 +8,7 @@ import org.springframework.web.reactive.config.WebFluxConfigurer
 class StaticPageConfig : WebFluxConfigurer {
     override fun addResourceHandlers(registry: ResourceHandlerRegistry) {
         registry.addResourceHandler("/**")
+            .addResourceLocations("classpath:/request/argw/")
             .addResourceLocations("classpath:/request/lilie/")
             .addResourceLocations("classpath:/request/hrgi/")
             .addResourceLocations("classpath:/request/hnki/")
